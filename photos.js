@@ -828,7 +828,7 @@ const photos = [
     "url": "photos/8435_Fabric_Bed_1.8x2.0m_Fuya.jpg"
   },
   {
-    "name": "Flash Light Bed 488757 A50-02.CG 1.6x2.0 Shatura",
+    "name": "Flash_Light_Bed_488757_A50-02.CG_1.6x2.0_Shatura.jpg",
     "url": "photos/Flash_Light_Bed_488757_A50-02.CG_1.6x2.0_Shatura.jpg"
   },
   {

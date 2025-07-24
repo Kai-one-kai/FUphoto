@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Search</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input { width: 300px; padding: 10px; margin-bottom: 20px; }
+    .gallery img { width: 150px; margin: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Search Photos</h1>
+  <input type="text" id="search" placeholder="Type a name..."/>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    // Sample data — you can generate this from your photo list
+    const photos = [
+      { name: "John Smith", url: "photos/john.jpg" },
+      { name: "Jane Doe", url: "photos/jane.jpg" },
+      { name: "Michael Lee", url: "photos/michael.jpg" }
+    ];
+
+    const searchInput = document.getElementById('search');
+    const gallery = document.getElementById('gallery');
+
+    function showPhotos(filter = '') {
+      gallery.innerHTML = '';
+      const filtered = photos.filter(photo => photo.name.toLowerCase().includes(filter.toLowerCase()));
+      filtered.forEach(photo => {
+        const img = document.createElement('img');
+        img.src = photo.url;
+        img.alt = photo.name;
+        img.title = photo.name;
+        gallery.appendChild(img);
+      });
+    }
+
+    searchInput.addEventListener('input', () => {
+      showPhotos(searchInput.value);
+    });
+
+    // Show all initially
+    showPhotos();
+  </script>
+</body>
+</html>
